@@ -5,8 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello GitePages!</title>
+    <script src="src/script.js"></script>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
 </head>
 <body>
-    Welcome to GitPages @https://r1freeze.github.io !
+    <p> Welcome to GitPages @ https://r1freeze.github.io ! </p>
+    <input id="btn" type="button" value="Test link to JS file under GitPages" />
+    <p id = "msg"></p>
+    <div id="divMain"></div>
+    <!-- --------------------- -->
+    <script>
+        d3.select("#divMain").append("svg").attr("id","newSvg")
+        .attr("width",200).attr("height",200)
+        .attr("style", "background:rgb(241, 247, 215)");
+    </script>
 </body>
 </html>

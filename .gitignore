@@ -1,0 +1,7 @@
+# Jekyll 
+_site/
+*-cache/
+.jekyll-metadata
+
+# NPM 
+/node_modules/

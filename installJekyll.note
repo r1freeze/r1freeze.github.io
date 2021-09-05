@@ -1,0 +1,36 @@
+0. get gem, bundle, jekyll installed
+1. $ bundle init
+    >Writing new Gemfile to #{repo_name}/Gemfile
+    >Gemfile
+2. follow from 
+    Creating a GitHub Pages site with Jekyll - STEP 6 (gh-pages)
+    https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
+
+    $ git checkout --orphan gh-pages
+
+    # preview files to be deleted
+    $ git rm -rf --dry-run .
+    # actually delete the files
+    $ git rm -rf .
+
+    # push to GitHub
+    $ git commit --allow-empty -m "Initializing gh-pages branch"
+    $ git push origin gh-pages
+
+3. STEP-7
+    # Creates a Jekyll site in the current directory 
+    (will be rejected if directory is not empty)
+    $ jekyll new --skip-bundle .
+
+4. Downgrade Jekyll's version to use git-pages 
+    through STEP-8 ~ 9 : comment under line in Gemfile to work with git-pages 
+    # gem "jekyll", "~> 4.2.0" 
+    through STEP-10~ 12: get latest latest supported version of the github-pages gem
+    and install using only one line:
+    (bundle-add - Add gem to the Gemfile and run bundle install)
+    $ bundle add --group=":jekyll-plugins" github-pages
+        (this will auto add 
+            gem "github-pages", "~> ${LATEST_VER}", :group => :":jekyll-plugins"
+         into Gemfile and generate Gemfile.lock file)
+         
+5. Read and edit _config.yml file 

@@ -49,3 +49,7 @@
     
     # Run Jekyll site locally again:
     $ bundle exec jekyll serve
+
+7. Shift between main / gh-pages
+    $ git checkout main
+    $ git checkout gh-pages

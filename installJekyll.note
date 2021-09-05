@@ -3,7 +3,7 @@
     >Writing new Gemfile to #{repo_name}/Gemfile
     >Gemfile
 2. follow from 
-    Creating a GitHub Pages site with Jekyll - STEP 6 (gh-pages)
+    DOC:Creating a GitHub Pages site with Jekyll - STEP 6 (gh-pages)
     https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
 
     $ git checkout --orphan gh-pages
@@ -33,4 +33,19 @@
             gem "github-pages", "~> ${LATEST_VER}", :group => :":jekyll-plugins"
          into Gemfile and generate Gemfile.lock file)
          
-5. Read and edit _config.yml file 
+5. STEP-13: Read and edit _config.yml file 
+
+6. Test locally
+    DOC:Testing your GitHub Pages site locally with Jekyll
+    https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
+
+    # Run Jekyll site locally.
+    $ bundle exec jekyll serve
+    # @20210905, still gets into under error:
+        > in `require': cannot load such file -- webrick (LoadError)
+    
+    # to solve webrick error:
+    $ bundle add webrick
+    
+    # Run Jekyll site locally again:
+    $ bundle exec jekyll serve

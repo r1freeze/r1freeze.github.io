@@ -21,13 +21,17 @@
 title: Nestic's Blog
 email: r1freeze@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Welcome to Nestic's personal blog.
+  Although Nestic is an FPGA engineer, hence some kind of "technical-things" may show up,
+  this blog is build for other purpose:
+  Output training for Japanese / markdown learning -
+  which means, mainly things like DIARY here... right now ;P
+  
+  Please still, feel free to contect me if you find something interested in :) 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://r1freeze.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+twitter_username: "-"
+github_username:  "-"
 
 # Build settings
 theme: minima
@@ -42,7 +46,7 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
@@ -53,3 +57,4 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+  - "*.note"

@@ -1,0 +1,47 @@
+https://staticman.net/docs/getting-started
+
+
+(0.) Deploy to Heroku >> Accept >> create new app
+(can be done later, or only use to block app name)
+https://github.com/eduardoboucas/staticman
+
+STATICMAN_BASE_URL = https://{HEROKU_APP_NAME}.herokuapp.com/
+
+1. Creating a GitHub App
+https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app
+
+Homepage: "https://{GITHUB_REPO_NAME}.github.io/"
+Webhook URL: "{STATICMAN_BASE_URL}/v1/webhook"
+
+Contents:       Read & Write - Necessary to read the Staticman site config
+Pull Requests:  Read & Write - Necessary to merge pull requests
+
+Subscribe to Pull request events
+
+>> Generate a private key
+get: App ID, Client ID
+
+>> Install app to static-site's repository
+
+2. Deploy Staticman
+
+>> setting Staticman instance on Heroku (auto build)
+
+DOC:Staticman API config values
+https://staticman.net/docs/api
+>>  At a minimum, you must include a way 
+    for Staticman to auth with a git provider, 
+    as well as an RSA private key. 
+
+GITHUB_APP_ID:      github app ID
+GITHUB_PRIVATE_KEY: download from github app page
+RSA_PRIVATE_KEY:    can be generate by:
+* PRIVATE_KEY including -----BEGIN RSA PRIVATE KEY----- ~ -----END RSA PRIVATE KEY-----
+
+# for Heroku config variables, use under:
+$ openssl genrsa > RSA.private-key.pem
+# for JSON only
+$ openssl genrsa | sed '$!s/$/\\n/' | tr -d '\n' > RSA.private-key.pem
+
+
+3. Create a site configuration file

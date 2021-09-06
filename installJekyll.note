@@ -1,9 +1,21 @@
-0. get gem, bundle, jekyll installed
-1. $ bundle init
-    >Writing new Gemfile to #{repo_name}/Gemfile
+0. get gem, bundle, jekyll installed 
+    following Jekyll DOC: 
+    https://jekyllrb.com/docs/installation/
+    
+A. Jekyll only (not for github-pages)
+    # Writing new Gemfile to #{repo_name}/Gemfile
+    $ bundle init
     >Gemfile
-2. follow from 
-    DOC:Creating a GitHub Pages site with Jekyll - STEP 6 (gh-pages)
+
+    # Install Jekyll into directory
+    $ bundle add jekyll
+     (bundle-add - Add gem to the Gemfile and run bundle install)
+
+    # Jump to B-5
+
+B-1.Jekyll (for github-pages)
+    following GitHub DOC:
+    *Creating a GitHub Pages site with Jekyll - STEP 6 (gh-pages)
     https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
 
     $ git checkout --orphan gh-pages
@@ -17,12 +29,12 @@
     $ git commit --allow-empty -m "Initializing gh-pages branch"
     $ git push origin gh-pages
 
-3. STEP-7
+B-2. STEP-7
     # Creates a Jekyll site in the current directory 
     (will be rejected if directory is not empty)
     $ jekyll new --skip-bundle .
 
-4. Downgrade Jekyll's version to use git-pages 
+B-3. Downgrade Jekyll's version to use git-pages 
     through STEP-8 ~ 9 : comment under line in Gemfile to work with git-pages 
     # gem "jekyll", "~> 4.2.0" 
     through STEP-10~ 12: get latest latest supported version of the github-pages gem
@@ -33,9 +45,9 @@
             gem "github-pages", "~> ${LATEST_VER}", :group => :":jekyll-plugins"
          into Gemfile and generate Gemfile.lock file)
          
-5. STEP-13: Read and edit _config.yml file 
+B-4. STEP-13: Read and edit _config.yml file 
 
-6. Test locally
+B-5. Test locally
     DOC:Testing your GitHub Pages site locally with Jekyll
     https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll
 
@@ -50,6 +62,6 @@
     # Run Jekyll site locally again:
     $ bundle exec jekyll serve
 
-7. Shift between main / gh-pages
+B-6. Shift between main / gh-pages
     $ git checkout main
     $ git checkout gh-pages

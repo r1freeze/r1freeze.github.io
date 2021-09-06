@@ -1,5 +1,11 @@
-_site
-.sass-cache
-.jekyll-cache
+# Jekyll 
+_site/
+*-cache/
 .jekyll-metadata
-vendor
+# Bundler
+.bundle/
+vendor/
+# NPM 
+/node_modules/
+# API
+*.pem

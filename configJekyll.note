@@ -60,3 +60,6 @@
             allowedFields: ["name", "email", "url", "message"]
             requiredFields: ["name", "email", "message"]
     TRY: remove email ing requiredFields
+
+    >>Success jump to "Example Domain" page in https://example.com/ 
+    and see Pull request "Add Staticman data"  by r1staticmanbot !!!!!

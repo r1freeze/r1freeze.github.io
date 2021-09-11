@@ -1,3 +1,51 @@
 1. look into "about.markdown"
     GitHub DOC: Adding content to your GitHub Pages site using Jekyll
     https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-content-to-your-github-pages-site-using-jekyll
+
+
+2. About Themes
+   https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+   https://mademistakes.com/mastering-jekyll/static-comments/
+   https://vilcins.medium.com/staticman-comments-on-a-jekyll-site-e55a24828980
+
+   locate a theme’s files 
+   # First get the gem's installation path:
+   $ bundle info --path minima
+   > C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/minima-2.5.1
+   
+   # **under WINDOWS-10,  invoke explorer with start command
+   # Powershell only (cmd acts like cd cmd, don't know why)
+   $ start "C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/minima-2.5.1"
+   # Powershell & cmd
+   $ start C:/Ruby30-x64/lib/ruby/gems/3.0.0/gems/minima-2.5.1
+
+   #(failed in windows10) then invoke explorer with above path, substituting `/` with `\`
+    explorer C:\Ruby26-x64\lib\ruby\gems\3.0.0\gems\minima-2.5.1
+
+   //----
+   try edit layouts (copy _layouts)
+
+
+    # Run Jekyll site locally :
+    $ bundle exec jekyll serve
+
+    >>post:
+    ERROR 1 :
+    {"success":false,"errorCode":"INVALID_VERSION"}
+    SOLVED:
+        missing "github" before github ID
+        endpoint: 'https://{STATICMAN_BASE_URL}/v3/entry/r1freeze/'
+        > endpoint: 'https://{STATICMAN_BASE_URL}/v3/entry/github/r1freeze/'
+
+    ERROR 2 :
+    {"success":false,
+    ...
+    "request":{"timeout":5000,"validate":
+             {"owner":{"required":true,"type":"string"},"path":{"required":true,"type":"string"},
+             "ref":{"type":"string"},"repo":{"required":true,"type":"string"}}}},
+             "documentation_url":"https://docs.github.com/rest/reference/repos#get-repository-content",
+             "_smErrorCode":"GITHUB_READING_FILE"},"errorCode":"GITHUB_READING_FILE"}
+
+    POSSIBLE SOLUTION:
+        STATICMAN looks at staticman.yml in repo not local.
+        Try check after push to repo....

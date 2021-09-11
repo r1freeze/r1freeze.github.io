@@ -58,3 +58,19 @@ exclude:
 #   - vendor/gems/
 #   - vendor/ruby/
   - "*.note"
+
+# ---< Staticman >---
+
+staticman:
+  # STATICMAN_BASE_URL
+  githhub_user: "r1freeze"
+  githhub_repo: "r1freeze.github.io"
+  branch: "gh-pages"
+  staticman_inst_url: "https://staticmanbotr1.herokuapp.com/"
+  # endpoint: "{site.comments.staticman_inst_url}/v3/entry/{site.comments.githhub_user}/"
+  # endpoint: "{{ staticman_inst_url }}/v3/entry/{{ githhub_user }}/"
+  # endpoint: "%{ staticman_inst_url }}/v3/entry/%{ githhub_user }/"
+  endpoint: 'https://staticmanbotr1.herokuapp.com/v3/entry/github/r1freeze/'
+  #{STATICMAN_BASE_URL}/v3/entry/{GIT_PROVIDER}/{GIT_PROVIDER_USERNAME}/{REPO}/{BRANCH}/{property (optional)}
+  #https://staticmaninstance.herokuapp.com/v3/entry/github/eduardoboucas/staticman/gh-pages/comments
+  

@@ -46,6 +46,17 @@
              "documentation_url":"https://docs.github.com/rest/reference/repos#get-repository-content",
              "_smErrorCode":"GITHUB_READING_FILE"},"errorCode":"GITHUB_READING_FILE"}
 
-    POSSIBLE SOLUTION:
+    SOLVED:
         STATICMAN looks at staticman.yml in repo not local.
-        Try check after push to repo....
+        Try check after push to repo.... (turn into Error 3)
+
+    ERROR 3 :
+    {"success":false,"data":["email"],"rawError":{"_smErrorCode":"MISSING_REQUIRED_FIELDS",
+        "data":["email"]},"errorCode":"MISSING_REQUIRED_FIELDS"}   
+
+    POSSIBLE SOLUTION: 
+         Missing one of the required fields in POST-request
+         In staticman.yml: 
+            allowedFields: ["name", "email", "url", "message"]
+            requiredFields: ["name", "email", "message"]
+    TRY: remove email ing requiredFields
